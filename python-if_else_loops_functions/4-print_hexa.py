@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 # Programme qui affiche les nombres de 0 à 98 en décimal et hexadécimal
 
