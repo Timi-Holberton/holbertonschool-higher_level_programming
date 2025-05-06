@@ -7,5 +7,5 @@ for char in range(ord('a'), ord('z') + 1):
     if char != ord('e') and char != ord('q'):
         # Vérifie que la lettre n'est pas 'e' (101) ni 'q' (113)
 
-        print(chr(char), end="")
+        print("{}".format(chr(char)), end="")
         # Affiche le caractère correspondant sans saut de ligne
