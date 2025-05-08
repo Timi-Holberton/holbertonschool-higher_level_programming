@@ -12,4 +12,3 @@ if __name__ == "__main__":
         a, b, c.mul(a, b),
         a, b, c.div(a, b)
     ))
-
