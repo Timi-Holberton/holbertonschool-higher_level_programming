@@ -14,5 +14,3 @@ def max_integer(my_list=[]):
         if nombre > gros_nombre:
             gros_nombre = nombre
 
-    # Retourne le plus grand nombre trouvé
-    return gros_nombre
