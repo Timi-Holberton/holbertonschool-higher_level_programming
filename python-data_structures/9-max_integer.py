@@ -2,7 +2,7 @@
 
 def max_integer(my_list=[]):
     # Vérifie si la liste est vide
-    if my_list == "":
+    if not my_list:
         return None
 
     # On suppose que le premier élément de la liste est le plus grand
@@ -14,3 +14,5 @@ def max_integer(my_list=[]):
         if nombre > gros_nombre:
             gros_nombre = nombre
 
+    # Retourne le plus grand nombre trouvé
+    return gros_nombre
