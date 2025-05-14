@@ -13,3 +13,13 @@ def square_matrix_simple(matrix=[]):
 # lambda x: x * x,     Fonction anonyme qui retourne le carré de x (x fois x)
 # ligne))              Chaque ligne (liste) de la matrice
 # for ligne in matrix] Pour chaque ligne dans la matrice d'origine
+
+
+#def square_matrix_simple(matrix=[]):
+#    grand_stock = []
+#    for i in matrix:
+#        stock = []
+#        for j in i:
+#            stock.append(j * j)
+#        grand_stock.append(stock)
+#    return grand_stock
