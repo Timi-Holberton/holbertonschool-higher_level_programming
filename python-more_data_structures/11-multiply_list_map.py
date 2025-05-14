@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def multiply_list_map(my_list=[], number=0):
-    resultat = list(map(lambda x: x * number, my_list))
-    return resultat
+    return list(map(lambda x: x * number, my_list))
+
