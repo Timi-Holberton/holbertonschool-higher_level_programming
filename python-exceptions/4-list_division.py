@@ -5,10 +5,8 @@ def list_division(my_list_1, my_list_2, list_length):
     # list_length est un nombre qui représente la taille max des listes
     for i in range(list_length):
         try:
-            value1 = my_list_1[i]
-            value2 = my_list_2[i]
             # variable temporaire qui stock le resultat de la division
-            division = value1 / value2
+            division = my_list_1[i] / my_list_2[i]
 
         except ZeroDivisionError: # division par 0
             print("division by 0")
