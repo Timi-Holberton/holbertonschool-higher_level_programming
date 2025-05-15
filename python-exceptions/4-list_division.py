@@ -10,17 +10,17 @@ def list_division(my_list_1, my_list_2, list_length):
             # variable temporaire qui stock le resultat de la division
             division = value1 / value2
 
-        except IndexError: # liste plus courte que la limite list_length
-            print("out of range")
-            # réinitialise division à 0 pour la prochaine boucle
+        except ZeroDivisionError: # division par 0
+            print("division by 0")
             division = 0
 
         except TypeError: # ce n'est pas un entier
             print("wrong type")
             division = 0
 
-        except ZeroDivisionError: # division par 0
-            print("division by 0")
+        except IndexError: # liste plus courte que la limite list_length
+            print("out of range")
+            # réinitialise division à 0 pour la prochaine boucle
             division = 0
 
         finally:
