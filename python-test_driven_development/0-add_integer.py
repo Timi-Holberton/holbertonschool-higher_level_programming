@@ -4,6 +4,8 @@
     Additionne deux entiers après validation de leurs types.
 
 """
+
+
 def add_integer(a, b=98):
     """
     Additionne deux entiers après validation de leurs types.
@@ -13,4 +15,3 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
     return int(a + b)
-
