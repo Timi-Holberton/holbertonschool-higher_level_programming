@@ -21,6 +21,6 @@ def matrix_divided(matrix, div):
         for x in ligne:
             if not isinstance(x, (int, float)):
                 raise TypeError("matrix must be a matrix (list of lists)"
-                                "of integers/floats")
+                                " of integers/floats")
     new_matrix = [[round(x / div, 2) for x in ligne] for ligne in matrix]
     return new_matrix
