@@ -1,6 +1,15 @@
 #!/usr/bin/python3
+"""
+    Divise tous les éléments d'une matrice par un nombre
+    retourne une nouvelle matrice avec les éléments arrondis
+    à 2 chiffres après la virgule
+"""
+
 
 def matrix_divided(matrix, div):
+    """
+    Divise tous les éléments d'une matrice par un nombre
+    """
     longueur_ligne = len(matrix[0])
     if any(len(ligne) != longueur_ligne for ligne in matrix):
         raise TypeError("Each row of the matrix must have the same size")
