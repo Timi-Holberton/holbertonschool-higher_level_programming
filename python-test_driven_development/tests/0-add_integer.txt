@@ -21,3 +21,5 @@ Traceback (most recent call last):
 TypeError: a must be an integer
 >>> add_integer(-2, 100.3)
 98
+>>> add_integer(1.2, 2.1)
+3
