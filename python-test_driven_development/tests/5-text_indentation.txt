@@ -1,0 +1,52 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Le soleil brille. Tu viens? Allons-y: maintenant.")
+Le soleil brille.
+<BLANKLINE>
+Tu viens?
+<BLANKLINE>
+Allons-y:
+<BLANKLINE>
+maintenant.
+<BLANKLINE>
+
+>>> text_indentation("Pas un mot ici")
+Pas un mot ici
+
+>>> text_indentation("")
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation("  Il est tard.   On rentre? ")
+Il est tard.
+<BLANKLINE>
+On rentre?
+<BLANKLINE>
+<BLANKLINE>
+
+>>> text_indentation("Top départ: C'est parti! Génial.")
+Top départ:
+<BLANKLINE>
+C'est parti! Génial.
+<BLANKLINE>
+
+>>> text_indentation("Test...Test encore??")
+Test.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+Test encore?
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation("Exemple .   ")
+Exemple .
+<BLANKLINE>
+<BLANKLINE>
+
