@@ -3,17 +3,17 @@
 
 
 class Square:
-    """Classe représentant un carré avec une taille et une position privées."""
+    """Classe représentant un carré avec une taille + une position privées."""
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialise un carré avec une taille et une position données.
 
         Args:
             size (int): La taille du côté du carré (doit être un entier >= 0).
-            position (tuple): La position du carré (tuple de 2 entiers positifs).
+            position (tuple): Position du carré (tuple de 2 entiers positifs).
 
         Raises:
-            TypeError: Si size n'est pas un entier, ou si position est invalide.
+            TypeError: Si size pas un entier, ou si position est invalide.
             ValueError: Si size est négatif.
         """
         self.size = size
@@ -72,8 +72,8 @@ class Square:
         Raises:
             TypeError: Si value n'est pas un tuple de 2 entiers positifs.
         """
-        if (not isinstance(value, tuple) or len(value) != 2 or
-            not all(isinstance(i, int) and i >= 0 for i in value)):
+        if (not isinstance(value, tuple) or len(value) != 2
+           or not all(isinstance(i, int) and i >= 0 for i in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
