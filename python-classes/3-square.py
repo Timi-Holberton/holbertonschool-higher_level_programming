@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""Création d'une class"""
+""""Création d'une classe"""
 
 
 class Square:
@@ -17,5 +17,3 @@ class Square:
 
     def area(self):
         return self.__size * self.__size
-
-
