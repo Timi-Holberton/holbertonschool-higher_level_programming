@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-#!/usr/bin/python3
 """"Création d'une classe pour définir un rectangle"""
 
 
@@ -43,7 +41,6 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return (self.width + self.height) * 2
-
 
     @property
     def width(self):
