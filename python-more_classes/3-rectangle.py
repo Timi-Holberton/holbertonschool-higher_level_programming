@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""""Création d'une classe pour définir un rectangle"""
+
 
 class Rectangle:
     """Classe représentant un rectangle géométrique.
@@ -95,6 +97,6 @@ class Rectangle:
     def __str__(self):
         """Renvoie une représentation en chaîne du rectangle."""
         if self.width == 0 or self.height == 0:
-            return 0
+            return ""
         lignes = ["#" * self.width for _ in range(self.height)]
         return "\n".join(lignes)
