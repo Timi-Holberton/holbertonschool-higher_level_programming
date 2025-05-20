@@ -95,6 +95,6 @@ class Rectangle:
     def __str__(self):
         """Renvoie une représentation en chaîne du rectangle."""
         if self.width == 0 or self.height == 0:
-            return ""
+            return 0
         lignes = ["#" * self.width for _ in range(self.height)]
         return "\n".join(lignes)
