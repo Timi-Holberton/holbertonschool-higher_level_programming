@@ -98,8 +98,3 @@ class Rectangle:
             return ""
         lignes = ["#" * self.width for _ in range(self.height)]
         return "\n".join(lignes)
-
-    def __repr__(self):
-       """Renvoie une représentation en chaîne du rectangle.
-       """
-       return f"Rectangle({self.width}, {self.height})"
