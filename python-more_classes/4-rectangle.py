@@ -110,4 +110,3 @@ class Rectangle:
                 Rectangle(width, height), utilisable avec eval().
         """
         return f"Rectangle({self.width}, {self.height})"
-
