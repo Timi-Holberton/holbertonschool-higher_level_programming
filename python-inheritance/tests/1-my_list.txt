@@ -1,24 +1,119 @@
 >>> MyList = __import__('1-my_list').MyList
+>>> print("=== Liste non triée ===")
+=== Liste non triée ===
+>>> my_list = MyList()
+>>> my_list.append(5)
+>>> my_list.append(2)
+>>> my_list.append(4)
+>>> my_list.append(1)
+>>> print("Original:", my_list)
+Original: [5, 2, 4, 1]
+>>> my_list.print_sorted()
+[1, 2, 4, 5]
+>>> print("Toujours original:", my_list)
+Toujours original: [5, 2, 4, 1]
+
+>>> print("=== Liste déjà triée ===")
+=== Liste déjà triée ===
 >>> my_list = MyList()
 >>> my_list.append(1)
->>> my_list.append(4)
 >>> my_list.append(2)
 >>> my_list.append(3)
->>> my_list.append(5)
->>> print(my_list)
-[1, 4, 2, 3, 5]
+>>> print("Original:", my_list)
+Original: [1, 2, 3]
 >>> my_list.print_sorted()
-[1, 2, 3, 4, 5]
->>> print(my_list)
-[1, 4, 2, 3, 5]
->>> my_list.append(-1)
->>> print(my_list)
-[1, 4, 2, 3, 5, -1]
->>> empty = MyList()
->>> print(empty)
+[1, 2, 3]
+
+>>> print("=== Liste avec doublons ===")
+=== Liste avec doublons ===
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> print("Original:", my_list)
+Original: [3, 1, 2, 3]
+>>> my_list.print_sorted()
+[1, 2, 3, 3]
+
+>>> print("=== Liste vide ===")
+=== Liste vide ===
+>>> my_list = MyList()
+>>> print("Original:", my_list)
+Original: []
+>>> my_list.print_sorted()
 []
->>> empty.print_sorted()
-[]
->>> my_list.append("a")
->>> print(my_list)
-[1, 4, 2, 3, 5, -1, 'a']
+
+>>> print("=== Un seul élément ===")
+=== Un seul élément ===
+>>> my_list = MyList()
+>>> my_list.append(42)
+>>> print("Original:", my_list)
+Original: [42]
+>>> my_list.print_sorted()
+[42]
+
+>>> print("=== Liste longue ===")
+=== Liste longue ===
+>>> my_list = MyList()
+>>> for i in [9, 7, 5, 3, 1, 2, 4, 6, 8, 0]:
+...     my_list.append(i)
+>>> print("Original:", my_list)
+Original: [9, 7, 5, 3, 1, 2, 4, 6, 8, 0]
+>>> my_list.print_sorted()
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> print("=== Tous les éléments identiques ===")
+=== Tous les éléments identiques ===
+>>> my_list = MyList()
+>>> for i in range(4):
+...     my_list.append(5)
+>>> print("Original:", my_list)
+Original: [5, 5, 5, 5]
+>>> my_list.print_sorted()
+[5, 5, 5, 5]
+
+>>> print("=== Nombres négatifs ===")
+=== Nombres négatifs ===
+>>> my_list = MyList()
+>>> for i in [-1, -3, 2, 0]:
+...     my_list.append(i)
+>>> print("Original:", my_list)
+Original: [-1, -3, 2, 0]
+>>> my_list.print_sorted()
+[-3, -1, 0, 2]
+
+>>> print("=== Grand et petit nombre ===")
+=== Grand et petit nombre ===
+>>> my_list = MyList()
+>>> my_list.append(999999)
+>>> my_list.append(-999999)
+>>> print("Original:", my_list)
+Original: [999999, -999999]
+>>> my_list.print_sorted()
+[-999999, 999999]
+
+>>> print("=== Test du retour de print_sorted() ===")
+=== Test du retour de print_sorted() ===
+>>> my_list = MyList([3, 2, 1])
+>>> result = my_list.print_sorted()
+[1, 2, 3]
+>>> print(result is None)
+True
+
+>>> print("=== Appels répétés de print_sorted() ===")
+=== Appels répétés de print_sorted() ===
+>>> my_list = MyList([3, 1, 2])
+>>> my_list.print_sorted()
+[1, 2, 3]
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+>>> print("=== Ajout après appel de print_sorted() ===")
+=== Ajout après appel de print_sorted() ===
+>>> my_list = MyList([3, 2, 1])
+>>> my_list.print_sorted()
+[1, 2, 3]
+>>> my_list.append(0)
+>>> my_list.print_sorted()
+[0, 1, 2, 3]
