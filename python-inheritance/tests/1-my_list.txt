@@ -14,3 +14,8 @@
 >>> my_list.append(-1)
 >>> print(my_list)
 [1, 4, 2, 3, 5, -1]
+>>> empty = MyList()
+>>> print(empty)
+[]
+>>> empty.print_sorted()
+[]
