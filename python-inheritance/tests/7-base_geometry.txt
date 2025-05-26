@@ -39,3 +39,44 @@ TypeError: hauteur must be an integer
 Traceback (most recent call last):
 ...
 TypeError: hauteur must be an integer
+
+=== Test integer_validator avec bool ===
+try:
+    bg.integer_validator("flag", True)  # True est bool mais aussi int en Python
+except Exception as e:
+    print(e)  # Attendu : TypeError ou non ? (en Python bool est une sous-classe de int)
+
+=== Test integer_validator avec liste ===
+try:
+    bg.integer_validator("valeur", [1, 2, 3])
+except Exception as e:
+    print(e)  # Attendu : TypeError
+
+=== Test integer_validator avec None ===
+try:
+    bg.integer_validator("valeur", None)
+except Exception as e:
+    print(e)  # Attendu : TypeError
+
+=== Test integer_validator avec objet personnalisé ===
+class Dummy:
+    pass
+
+try:
+    bg.integer_validator("valeur", Dummy())
+except Exception as e:
+    print(e)  # Attendu : TypeError
+
+=== Test integer_validator avec entier très grand ===
+try:
+    bg.integer_validator("valeur", 10**10)
+    print("Validation réussie pour grand entier.")
+except Exception as e:
+    print(e)  # Pas d'exception attendue
+
+=== Test area() lève bien l'exception ===
+try:
+    bg.area()
+except Exception as e:
+    print(e)  # Attendu : "area() is not implemented"
+
