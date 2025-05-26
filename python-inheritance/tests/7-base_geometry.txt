@@ -2,37 +2,53 @@
 
 >>> bg = BaseGeometry()
 
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.area(7)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> bg.integer_validator("name", 5)
 
 >>> bg.integer_validator("unitest", 12)
 
-
 >>> bg.integer_validator("name", int(1.8))
-
-
-
->>> bg = BaseGeometry(5)
-Traceback (most recent call last):
-TypeError: BaseGeometry() takes no arguments
-
->>> bg.integer_validator("name", "John")
-Traceback (most recent call last):
-TypeError: name must be an integer
-
->>> bg.integer_validator("name", -5)
-Traceback (most recent call last):
-ValueError: name must be greater than 0
 
 >>> bg.integer_validator("name", 0)
 Traceback (most recent call last):
 ValueError: name must be greater than 0
 
->>> bg.integer_validator()
+>>> bg.integer_validator("name", -3)
 Traceback (most recent call last):
-TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+ValueError: name must be greater than 0
 
->>> bg.integer_validator("name")
+>>> bg.integer_validator("name", -5)
 Traceback (most recent call last):
-TypeError: integer_validator() missing 1 required positional argument: 'value'
+ValueError: name must be greater than 0
+
+>>> bg.integer_validator("name", "texte")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", 2.5)
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", 1.8)
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("name", True)
+
+>>> bg.integer_validator("name", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: name must be an integer
 
 >>> bg.integer_validator("name", [1])
 Traceback (most recent call last):
@@ -42,26 +58,61 @@ TypeError: name must be an integer
 Traceback (most recent call last):
 TypeError: name must be an integer
 
->>> bg.integer_validator("name", 1.8)
-Traceback (most recent call last):
-TypeError: name must be an integer
-
->>> bg.integer_validator("name", 12 , 12)
-Traceback (most recent call last):
-TypeError: integer_validator() takes 3 positional arguments but 4 were given
-
 >>> bg.integer_validator("name", None)
 Traceback (most recent call last):
 TypeError: name must be an integer
+
+>>> class Dummy:
+...     pass
+
+>>> bg.integer_validator("name", Dummy())
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("value", 10_000_000_000)
+
+>>> bg.integer_validator("value", "")
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+>>> bg.integer_validator("value", (1, 2))
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+>>> bg.integer_validator("value", {"a": 1})
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+>>> bg.integer_validator("value", {1, 2, 3})
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+>>> bg.integer_validator("value", bytearray(b"123"))
+Traceback (most recent call last):
+TypeError: value must be an integer
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator("name")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 >>> bg.integer_validator("name", )
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> bg.area()
+>>> bg.integer_validator("name", 12 , 12)
 Traceback (most recent call last):
-Exception: area() is not implemented
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
->>> bg.area(7)
+>>> bg = BaseGeometry(5)
 Traceback (most recent call last):
-TypeError: area() takes 1 positional argument but 2 were given
+TypeError: BaseGeometry() takes no arguments
+
+>>> isinstance(bg, BaseGeometry)
+True
+
+>>> hasattr(bg, "area") and hasattr(bg, "integer_validator")
+True
