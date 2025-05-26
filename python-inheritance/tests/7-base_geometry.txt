@@ -43,7 +43,6 @@ TypeError: hauteur must be an integer
 >>> print("=== Test integer_validator avec bool ===")
 === Test integer_validator avec bool ===
 >>> bg.integer_validator("flag", True)
-# (Pas d'exception car bool est un int en Python, sinon à modifier la méthode)
 
 >>> print("=== Test integer_validator avec liste ===")
 === Test integer_validator avec liste ===
@@ -71,7 +70,6 @@ TypeError: valeur must be an integer
 >>> print("=== Test integer_validator avec entier très grand ===")
 === Test integer_validator avec entier très grand ===
 >>> bg.integer_validator("valeur", 10000000000)
-# Pas d'exception attendue
 
 >>> print("=== Test area() lève bien l'exception ===")
 === Test area() lève bien l'exception ===
