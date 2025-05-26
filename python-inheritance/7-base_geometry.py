@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+   """
+    Classe de base pour la géométrie.
+    """
+
 
 class BaseGeometry:
     """
