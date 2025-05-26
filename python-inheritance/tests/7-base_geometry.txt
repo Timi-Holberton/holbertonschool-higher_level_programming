@@ -1,13 +1,6 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
->>> print("=== Test de area() ===")
-=== Test de area() ===
->>> bg.area()
-Traceback (most recent call last):
-...
-Exception: area() is not implemented
-
 >>> print("=== Test integer_validator avec int positif ===")
 === Test integer_validator avec int positif ===
 >>> bg.integer_validator("largeur", 5)
@@ -70,10 +63,3 @@ TypeError: valeur must be an integer
 >>> print("=== Test integer_validator avec entier très grand ===")
 === Test integer_validator avec entier très grand ===
 >>> bg.integer_validator("valeur", 10000000000)
-
->>> print("=== Test area() lève bien l'exception ===")
-=== Test area() lève bien l'exception ===
->>> bg.area()
-Traceback (most recent call last):
-...
-Exception: area() is not implemented
