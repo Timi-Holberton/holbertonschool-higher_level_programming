@@ -1,0 +1,41 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+>>> print("=== Test de area() ===")
+=== Test de area() ===
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+>>> print("=== Test integer_validator avec int positif ===")
+=== Test integer_validator avec int positif ===
+>>> bg.integer_validator("largeur", 5)
+
+>>> print("=== Test integer_validator avec 0 ===")
+=== Test integer_validator avec 0 ===
+>>> bg.integer_validator("hauteur", 0)
+Traceback (most recent call last):
+...
+ValueError: hauteur must be greater than 0
+
+>>> print("=== Test integer_validator avec un entier négatif ===")
+=== Test integer_validator avec un entier négatif ===
+>>> bg.integer_validator("largeur", -3)
+Traceback (most recent call last):
+...
+ValueError: largeur must be greater than 0
+
+>>> print("=== Test integer_validator avec une chaîne ===")
+=== Test integer_validator avec une chaîne ===
+>>> bg.integer_validator("hauteur", "10")
+Traceback (most recent call last):
+...
+TypeError: hauteur must be an integer
+
+>>> print("=== Test integer_validator avec un float ===")
+=== Test integer_validator avec un float ===
+>>> bg.integer_validator("hauteur", 2.5)
+Traceback (most recent call last):
+...
+TypeError: hauteur must be an integer
