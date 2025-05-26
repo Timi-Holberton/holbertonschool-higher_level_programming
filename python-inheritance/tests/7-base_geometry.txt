@@ -184,9 +184,3 @@ ValueError: hauteur must be greater than 0
 
 # Test avec un entier très grand
 >>> bg.integer_validator("big", 10_000_000)
-
-
-
-
-
-
