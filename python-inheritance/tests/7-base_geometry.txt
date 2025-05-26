@@ -82,7 +82,8 @@ True
 >>> hasattr(bg, "area") and hasattr(bg, "integer_validator")
 True
 
->>> bg = BaseGeometry(5)
+>>> bg.integer_validator()
 Traceback (most recent call last):
-TypeError: BaseGeometry() takes no arguments
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
 
