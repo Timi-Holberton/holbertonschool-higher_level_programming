@@ -161,3 +161,67 @@ TypeError: {'a': 1} must be an integer
 Traceback (most recent call last):
     ...
 ValueError: invalid literal for int() with base 10: 'inf'
+
+>>> isinstance(bg, BaseGeometry)
+True
+>>> hasattr(bg, "area") and hasattr(bg, "integer_validator")
+True
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+>>> bg.integer_validator("poids", "lourd")
+Traceback (most recent call last):
+...
+TypeError: poids must be an integer
+>>> bg.integer_validator("hauteur", -10)
+Traceback (most recent call last):
+...
+ValueError: hauteur must be greater than 0
+>>> bg.integer_validator("width", 10)
+>>> bg.integer_validator("age", "20")
+Traceback (most recent call last):
+...
+TypeError: age must be an integer
+>>> bg.integer_validator(None, None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+>>> bg.integer_validator(None, 12)
+>>> bg.integer_validator("valeur", None)
+Traceback (most recent call last):
+...
+TypeError: valeur must be an integer
+>>> bg.integer_validator("size", 0)
+Traceback (most recent call last):
+...
+ValueError: size must be greater than 0
+>>> bg.integer_validator("length", -5)
+Traceback (most recent call last):
+...
+ValueError: length must be greater than 0
+>>> bg.integer_validator("big", 10_000_000)
+>>> bg.integer_validator("prix", 3.14)
+Traceback (most recent call last):
+...
+TypeError: prix must be an integer
+>>> bg.integer_validator("actif", True)
+Traceback (most recent call last):
+...
+TypeError: actif must be an integer
+>>> bg.integer_validator("collection", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: collection must be an integer
+>>> bg.integer_validator("params", {"key": "value"})
+Traceback (most recent call last):
+...
+TypeError: params must be an integer
+>>> bg.integer_validator('name', 'string')
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+>>> bg.integer_validator("ensemble", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: ensemble must be an integer
