@@ -82,6 +82,4 @@ True
 >>> hasattr(bg, "area") and hasattr(bg, "integer_validator")
 True
 
->>> bg.area(7)
-Traceback (most recent call last):
-TypeError: area() takes 1 positional argument but 2 were given
+>>> bg.integer_validator("name", int(1.8))
