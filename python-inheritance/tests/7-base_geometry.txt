@@ -1,6 +1,13 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
+>>> print("=== Test de area() ===")
+=== Test de area() ===
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
 >>> print("=== Test integer_validator avec int positif ===")
 === Test integer_validator avec int positif ===
 >>> bg.integer_validator("largeur", 5)
@@ -63,3 +70,66 @@ TypeError: valeur must be an integer
 >>> print("=== Test integer_validator avec entier très grand ===")
 === Test integer_validator avec entier très grand ===
 >>> bg.integer_validator("valeur", 10000000000)
+
+>>> print("=== Test area() lève bien l'exception ===")
+=== Test area() lève bien l'exception ===
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+>>> print("=== Test integer_validator avec une string vide ===")
+=== Test integer_validator avec une string vide ===
+>>> bg.integer_validator("nom", "")
+Traceback (most recent call last):
+...
+TypeError: nom must be an integer
+
+>>> print("=== Test integer_validator avec un tuple ===")
+=== Test integer_validator avec un tuple ===
+>>> bg.integer_validator("dimensions", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: dimensions must be an integer
+
+>>> print("=== Test integer_validator avec un dictionnaire ===")
+=== Test integer_validator avec un dictionnaire ===
+>>> bg.integer_validator("data", {"a": 1})
+Traceback (most recent call last):
+...
+TypeError: data must be an integer
+
+>>> print("=== Test integer_validator avec un set ===")
+=== Test integer_validator avec un set ===
+>>> bg.integer_validator("ensemble", {1, 2, 3})
+Traceback (most recent call last):
+...
+TypeError: ensemble must be an integer
+
+>>> print("=== Test integer_validator avec un bytearray ===")
+=== Test integer_validator avec un bytearray ===
+>>> bg.integer_validator("binaire", bytearray(b"123"))
+Traceback (most recent call last):
+...
+TypeError: binaire must be an integer
+
+>>> print("=== Test integer_validator avec un float négatif ===")
+=== Test integer_validator avec un float négatif ===
+>>> bg.integer_validator("valeur", -1.5)
+Traceback (most recent call last):
+...
+TypeError: valeur must be an integer
+
+>>> print("=== Test integer_validator avec float 0.0 ===")
+=== Test integer_validator avec float 0.0 ===
+>>> bg.integer_validator("zero", 0.0)
+Traceback (most recent call last):
+...
+TypeError: zero must be an integer
+
+>>> print("=== Test integer_validator avec int négatif très grand ===")
+=== Test integer_validator avec int négatif très grand ===
+>>> bg.integer_validator("valeur", -999999999999)
+Traceback (most recent call last):
+...
+ValueError: valeur must be greater than 0
