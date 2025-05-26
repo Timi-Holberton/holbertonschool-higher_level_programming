@@ -1,46 +1,31 @@
 #!/usr/bin/python3
-"""
-Module contenant une classe de base pour la géométrie.
-"""
-
 
 class BaseGeometry:
     """
-    Classe de base destinée à servir de fondation pour les classes
-    représentant des formes géométriques.
-
-    Cette classe fournit une interface générale avec une méthode
-    'area' non implémentée, et une méthode utilitaire
-    'integer_validator' pour valider les attributs entiers positifs.
+    Classe de base pour la géométrie.
     """
 
     def area(self):
         """
-        Calcule l'aire de la forme géométrique.
-
-        Cette méthode doit être implémentée par les classes filles.
-        Si elle n'est pas redéfinie, elle lève une exception.
-
-        Raises:
-            Exception: Toujours levée pour indiquer que la méthode
-            n'est pas implémentée.
+        Méthode qui doit être surchargée dans les classes dérivées.
+        Lève une exception si appelée directement.
         """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """
-        Valide que la valeur donnée est un entier strictement positif.
+        Valide que 'value' est un entier strictement positif.
 
         Args:
-            name (str): Nom de l'attribut à valider
-            (utilisé dans le message d'erreur).
-            value (int): Valeur à valider.
+            name (str): Le nom de la variable à valider
+            (utilisé dans les messages d'erreur).
+            value: La valeur à valider.
 
         Raises:
-            TypeError: Si 'value' n'est pas un entier.
-            ValueError: Si 'value' est inférieur ou égal à 0.
+            TypeError: Si value n'est pas un entier (exclut les booléens).
+            ValueError: Si value est inférieur ou égal à 0.
         """
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
+        if type(value) is not int:
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(f"{name} must be greater than 0")
