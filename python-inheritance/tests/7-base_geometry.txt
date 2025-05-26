@@ -40,43 +40,42 @@ Traceback (most recent call last):
 ...
 TypeError: hauteur must be an integer
 
+>>> print("=== Test integer_validator avec bool ===")
 === Test integer_validator avec bool ===
-try:
-    bg.integer_validator("flag", True)  # True est bool mais aussi int en Python
-except Exception as e:
-    print(e)  # Attendu : TypeError ou non ? (en Python bool est une sous-classe de int)
+>>> bg.integer_validator("flag", True)
+# (Pas d'exception car bool est un int en Python, sinon à modifier la méthode)
 
+>>> print("=== Test integer_validator avec liste ===")
 === Test integer_validator avec liste ===
-try:
-    bg.integer_validator("valeur", [1, 2, 3])
-except Exception as e:
-    print(e)  # Attendu : TypeError
+>>> bg.integer_validator("valeur", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: valeur must be an integer
 
+>>> print("=== Test integer_validator avec None ===")
 === Test integer_validator avec None ===
-try:
-    bg.integer_validator("valeur", None)
-except Exception as e:
-    print(e)  # Attendu : TypeError
+>>> bg.integer_validator("valeur", None)
+Traceback (most recent call last):
+...
+TypeError: valeur must be an integer
 
+>>> print("=== Test integer_validator avec objet personnalisé ===")
 === Test integer_validator avec objet personnalisé ===
-class Dummy:
-    pass
+>>> class Dummy:
+...     pass
+>>> bg.integer_validator("valeur", Dummy())
+Traceback (most recent call last):
+...
+TypeError: valeur must be an integer
 
-try:
-    bg.integer_validator("valeur", Dummy())
-except Exception as e:
-    print(e)  # Attendu : TypeError
-
+>>> print("=== Test integer_validator avec entier très grand ===")
 === Test integer_validator avec entier très grand ===
-try:
-    bg.integer_validator("valeur", 10**10)
-    print("Validation réussie pour grand entier.")
-except Exception as e:
-    print(e)  # Pas d'exception attendue
+>>> bg.integer_validator("valeur", 10000000000)
+# Pas d'exception attendue
 
+>>> print("=== Test area() lève bien l'exception ===")
 === Test area() lève bien l'exception ===
-try:
-    bg.area()
-except Exception as e:
-    print(e)  # Attendu : "area() is not implemented"
-
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
