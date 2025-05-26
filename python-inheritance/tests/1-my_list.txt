@@ -19,6 +19,6 @@
 []
 >>> empty.print_sorted()
 []
->>> my_list = MyList([1, 2, 3, 4, 5])
+>>> my_list.append("a")
 >>> print(my_list)
-[1, 2, 3, 4, 5]
+[1, 4, 2, 3, 5, -1, 'a']
