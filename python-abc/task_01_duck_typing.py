@@ -82,8 +82,8 @@ class Rectangle(Shape):
             width (float) : Largeur du rectangle (valeur absolue utilisée).
             height (float) : Hauteur du rectangle (valeur absolue utilisée).
         """
-        self.width = abs(width)
-        self.height = abs(height)
+        self.width = width
+        self.height = height
 
     def area(self):
         """Calcule et retourne l'aire du rectangle."""
