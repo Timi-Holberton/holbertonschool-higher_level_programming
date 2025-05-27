@@ -1,6 +1,77 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
 
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+>>> bg = BaseGeometry()
+
+# ---------------------------------------
+# TEST SUR LA CLASSE BASEGEOMETRY
+# ---------------------------------------
+
+>>> isinstance(bg, BaseGeometry)
+True
+
+>>> type(bg).__name__
+'BaseGeometry'
+
+
+# ---------------------------------------
+# TEST SUR LA METHODE AREA
+# ---------------------------------------
+
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+
+# ---------------------------------------
+# TEST SUR LA METHODE INTEGER_VALIDATOR
+# ---------------------------------------
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator("width", 10)
+
+>>> bg.integer_validator("poids", "lourd")
+Traceback (most recent call last):
+...
+TypeError: poids must be an integer
+
+>>> bg.integer_validator(None, None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+
+>>> bg.integer_validator("size", 0)
+Traceback (most recent call last):
+...
+ValueError: size must be greater than 0
+
+>>> bg.integer_validator("actif", True)
+Traceback (most recent call last):
+...
+TypeError: actif must be an integer
+
+>>> bg.integer_validator("collection", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: collection must be an integer
+
+>>> bg.integer_validator("name", {1})
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+>>> bg.integer_validator("ensemble", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: ensemble must be an integer
+
+# mon test
 >>> isinstance(bg, BaseGeometry)
 True
 
