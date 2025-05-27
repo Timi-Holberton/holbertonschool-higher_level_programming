@@ -41,7 +41,7 @@ class Dog(Animal):
         """
         Affiche le son émis par un chien.
         """
-        print("Bark")
+        return "Bark"
 
 
 class Cat(Animal):
@@ -55,4 +55,4 @@ class Cat(Animal):
         """
         Affiche le son émis par un chat.
         """
-        print("Meow")
+        return "Meow"
