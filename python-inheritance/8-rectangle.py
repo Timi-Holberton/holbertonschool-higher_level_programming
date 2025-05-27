@@ -14,41 +14,7 @@ rectangle via sa largeur et sa hauteur.
 """
 
 
-class BaseGeometry:
-    """
-    Classe de base pour la géométrie.
-
-    Fournit une interface générique pour les formes géométriques.
-
-    Méthodes :
-        area() : Doit être surchargée. Lève une exception si appelée.
-        integer_validator(name, value) : Valide que value est un int > 0.
-    """
-
-    def area(self):
-        """
-        Méthode qui doit être surchargée dans les classes dérivées.
-        Lève une exception si appelée directement.
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """
-        Valide que 'value' est un entier strictement positif.
-
-        Args:
-            name (str): Le nom de la variable à valider
-                        (utilisé dans les messages d'erreur).
-            value: La valeur à valider.
-
-        Raises:
-            TypeError: Si value n'est pas un entier (exclut les booléens).
-            ValueError: Si value est inférieur ou égal à 0.
-        """
-        if type(value) is not int:
-            raise TypeError(f"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -81,6 +47,7 @@ class Rectangle(BaseGeometry):
         width (int) : Largeur du rectangle.
         height (int) : Hauteur du rectangle.
         """
-        self.integer_validator(width, height)
+        self.integer_validator("height", height)
+        self.integer_validator("hwidth", width)
         self.__width = width
         self.__height = height
