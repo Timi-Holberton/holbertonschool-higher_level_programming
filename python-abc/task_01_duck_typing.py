@@ -93,13 +93,13 @@ class Rectangle(Shape):
         """Calcule et retourne le périmètre du rectangle."""
         return 2 * (self.width + self.height)
 
-if __name__ == "__main__":
-    def shape_info(Shape):
-        """
-        Affiche l'aire et le périmètre d'une forme géométrique.
 
-        Args :
-            Shape (Shape) : Instance d'une classe dérivée de Shape.
-        """
-        print("Area:", Shape.area())
-        print("Perimeter:", Shape.perimeter())
+def shape_info(Shape):
+    """
+    Affiche l'aire et le périmètre d'une forme géométrique.
+
+    Args :
+        Shape (Shape) : Instance d'une classe dérivée de Shape.
+    """
+    print("Area:", Shape.area())
+    print("Perimeter:", Shape.perimeter())
