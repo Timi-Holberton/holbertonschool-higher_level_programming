@@ -85,7 +85,7 @@ class FlyingFish(Fish, Bird):
         """
         Affiche un message indiquant que le poisson volant nage.
         """
-        print("The fish is swimming!")
+        print("The flying fish is swimming!")
 
     def habitat(self):
         """
