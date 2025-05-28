@@ -79,7 +79,7 @@ class FlyingFish(Fish, Bird):
         Affiche un message indiquant que le poisson volant plane
         dans les airs.
         """
-        print("The bird is soaring!")
+        print("The flying fish is soaring!")
 
     def swim(self):
         """
