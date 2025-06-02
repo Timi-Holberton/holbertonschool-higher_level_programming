@@ -4,6 +4,7 @@ Module write_file
 Ce module contient une fonction pour écrire du texte dans un fichier en UTF-8.
 """
 
+
 def write_file(filename="", text=""):
     """
     Écrit une chaîne de caractères dans un fichier texte encodé en UTF-8.
