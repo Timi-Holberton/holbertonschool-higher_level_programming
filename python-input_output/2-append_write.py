@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
 Module append_write
-Ce module fournit une fonction pour ajouter du texte à la fin d’un fichier UTF-8,
-en le créant s’il n’existe pas.
+Ce module fournit une fonction pour ajouter du texte à la fin
+d’un fichier UTF-8, en le créant s’il n’existe pas.
 """
 
 
