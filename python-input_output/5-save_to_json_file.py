@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
 Module save_to_json_file
-Ce module fournit une fonction pour écrire un objet Python dans un fichier texte
-en utilisant sa représentation JSON.
+Ce module fournit une fonction pour écrire un objet Python
+dans un fichier texte en utilisant sa représentation JSON.
 """
 
 import json
