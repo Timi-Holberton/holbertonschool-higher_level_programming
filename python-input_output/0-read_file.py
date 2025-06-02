@@ -13,5 +13,5 @@ def read_file(filename=""):
 
     Lève une exception si le fichier n'existe pas ou n'est pas lisible.
     """
-    with open(filename, "r", encoding="utf-8") as f:
-        print(f.read(), end="")
+    with open(filename, "r", encoding="utf-8") as file:
+        print(file.read(), end="")
