@@ -9,6 +9,7 @@ et de convertir son contenu en objet Python standard (liste, dictionnaire...)
 
 import json
 
+
 def load_from_json_file(filename):
     """
     Charger un objet Python depuis un fichier JSON.
