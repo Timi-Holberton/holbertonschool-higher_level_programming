@@ -42,17 +42,19 @@ class Student:
         Returns:
             dict: Dictionnaire des attributs filtrés ou complets.
         """
-        # Vérifie si attrs est exactement une liste
-        if type(attrs) == list:
-            dico = {}  # Initialise un dictionnaire vide
-            for key in attrs:  # Parcourt chaque élément de la liste attrs
-                # Vérifie que l'objet a un attribut nommé key
+        if isinstance(attrs, list):
+            dico = {}
+            for key in attrs:
                 if hasattr(self, key):
-                    # Récupère la valeur de cet attribut et l'ajoute au dico
                     dico[key] = getattr(self, key)
-                    # Retourne le dico filtré contenant uniquement
-                    # les attributs demandés
-                else:
-                    return dico
-            # Retourne un dictionnaire complet des attributs de l'objet
+            return dico
+        else:
             return self.__dict__
+
+# Vérifie si attrs est exactement une liste
+# Initialise un dictionnaire vide pour stocker les attributs filtrés
+# Parcourt chaque élément de la liste attrs
+# Vérifie que l'objet a un attribut nommé key
+# Récupère la valeur de cet attribut et l'ajoute au dictionnaire
+# Retourne le dictionnaire filtré contenant uniquement les attributs demandés
+# Retourne un dictionnaire complet des attributs de l'objet
