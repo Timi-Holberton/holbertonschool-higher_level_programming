@@ -9,14 +9,15 @@ Si ce fichier n'existe pas ou est invalide, une nouvelle liste est initialisée
 """
 import sys
 
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
+filename = "add_item.json"
 args = sys.argv[1:]
-file = load_from_json_file("add_item.json")
+file = load_from_json_file(filename)
 if file:
     liste = file
 else:
     liste = []
 liste.extend(args)
-save_to_json_file(liste, "add_item.json")
+save_to_json_file(liste, filename)
