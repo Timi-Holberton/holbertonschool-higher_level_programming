@@ -43,7 +43,7 @@ class Student:
             dict: Dictionnaire des attributs filtrés ou complets.
         """
         # Vérifie si attrs est exactement une liste
-        if isinstance(attrs, list):
+        if type(attrs) == list:
             dico = {}  # Initialise un dictionnaire vide
             for key in attrs:  # Parcourt chaque élément de la liste attrs
                 # Vérifie que l'objet a un attribut nommé key
