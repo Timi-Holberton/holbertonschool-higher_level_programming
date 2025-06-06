@@ -28,13 +28,10 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
 args = sys.argv
-try:
-    file = load_from_json_file("add_item.json")
-    if file:  # si file contient quelque chose
-        liste = file  # on assigne liste à file
-    else:  # si file est None ou vide ou autre
-        liste = []  # on créer une nouvelle liste vide et on l'assigne à liste
-except Exception("erreur"):
+file = load_from_json_file("add_item.json")
+if file:
+    liste = file
+else:
     liste = []
 liste.extend(args[1:])
 save_to_json_file(liste, "add_item.json")
