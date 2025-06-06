@@ -5,6 +5,7 @@ Module définissant une classe Student avec une méthode
 permettant de sérialiser ses attributs au format JSON-compatible.
 """
 
+
 class Student:
     """
     Représente un étudiant avec un prénom, un nom et un âge.
