@@ -5,6 +5,7 @@ Module fournissant une fonction utilitaire pour convertir une instance
 d'une classe en dictionnaire sérialisable au format JSON.
 """
 
+
 def class_to_json(obj):
     """
     Convertir une instance en dictionnaire JSON-compatible.
