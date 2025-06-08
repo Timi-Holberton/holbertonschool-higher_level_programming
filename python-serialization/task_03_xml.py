@@ -36,15 +36,13 @@ def serialize_to_xml(dictionary, filename):
         élément enfant.
         Le document XML est ensuite écrit dans le fichier spécifié.
     """
-    elem = ET.Element("data")
-    for key, val in dictionary.items():
-        # create an Element
-        # class object
-        child = ET.Element(key)
-        child.text = str(val)
-        elem.append(child)
-    tree = ET.ElementTree(elem)
-    tree.write(filename)
+    elem = ET.Element("data")  # Création de la racine <data>
+    for key, val in dictionary.items():  # Parcours des paires clé/valeur
+        child = ET.Element(key)  # Création d'un élément avec le nom de la clé
+        child.text = str(val)  # Affectation de la valeur convertie en chaîne
+        elem.append(child)  # Ajout de l'élément enfant à la racine
+    tree = ET.ElementTree(elem)  # Création de l'arbre XML
+    tree.write(filename)  # Écriture de l'arbre dans le fichier
 
 
 def deserialize_from_xml(filename):
@@ -65,9 +63,9 @@ def deserialize_from_xml(filename):
         est le nom d’une balise enfant et la valeur associée est son
         contenu textuel.
     """
-    dico = {}
-    tree = ET.parse(filename)
-    root = tree.getroot()
-    for child in root:
-        dico[child.tag] = child.text
-    return dico
+    dico = {}  # Initialisation du dictionnaire vide
+    tree = ET.parse(filename)  # Parsing du fichier XML
+    root = tree.getroot()  # Récupération de la racine <data>
+    for child in root:  # Parcours des éléments enfants
+        dico[child.tag] = child.text  # Ajout de la clé/valeur au dictionnaire
+    return dico  # Retour du dictionnaire final
