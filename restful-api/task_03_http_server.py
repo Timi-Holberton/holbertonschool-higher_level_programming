@@ -44,7 +44,7 @@ class Serveur(BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json; charset=utf-8")
             self.end_headers()
             data_set_json = json.dumps(data_set)
-            self.wfile.write(data_set_json.encode("utf-8"))
+            self.wfile.write(data_set_json.encode)
 
         elif self.path == "/status":
             self.send_response(200)
@@ -59,7 +59,7 @@ class Serveur(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
             data_info_json = json.dumps(data_info)
-            self.wfile.write(data_info_json.encode("utf-8"))
+            self.wfile.write(data_info_json)
 
         elif self.path == "/":
             self.send_response(200)
