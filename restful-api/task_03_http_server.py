@@ -41,7 +41,7 @@ class Serveur(BaseHTTPRequestHandler):
         if self.path == "/data":
             data_set = {"name": "John", "age": 30, "city": "New York"}
             self.send_response(200)
-            self.send_header("Content-type", "application/json; charset=utf-8")
+            self.send_header("Content-type", "application/json")
             self.end_headers()
             data_set_json = bytes(json.dumps(data_set), "utf-8")
             self.wfile.write(data_set_json)
