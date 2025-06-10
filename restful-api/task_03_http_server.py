@@ -61,6 +61,7 @@ class Serveur(BaseHTTPRequestHandler):
             data_info_json = json.dumps(data_info)
             self.wfile.write(data_info_json.encode("utf-8"))
 
+        elif self.path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
