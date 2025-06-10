@@ -39,10 +39,10 @@ class Serveur(BaseHTTPRequestHandler):
         La réponse est envoyée avec l'encodage UTF-8.
         """
         if self.path == "/data":
+            data_set = {"name": "John", "age": 30, "city": "New York"}
             self.send_response(200)
             self.send_header("Content-type", "application/json; charset=utf-8")
             self.end_headers()
-            data_set = {"name": "John", "age": 30, "city": "New York"}
             data_set_json = json.dumps(data_set)
             self.wfile.write(data_set_json.encode("utf-8"))
 
@@ -53,11 +53,11 @@ class Serveur(BaseHTTPRequestHandler):
             self.wfile.write(b"OK")
 
         elif self.path == "/info":
+            data_info = {"version": "1.0", "description": "A simple API built "
+                         "with http.server"}
             self.send_response(200)
             self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
-            data_info = {"version": "1.0", "description": "A simple API built "
-                         "with http.server"}
             data_info_json = json.dumps(data_info)
             self.wfile.write(data_info_json.encode("utf-8"))
 
