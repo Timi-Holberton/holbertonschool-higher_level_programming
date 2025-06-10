@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-Serveur HTTP simple utilisant le module http.server pour gérer des requêtes GET.
+Serveur HTTP simple utilisant module http.server pour gérer des requêtes GET.
 
 Ce module implémente une API minimale avec trois points d'entrée :
 - /data : retourne des données JSON représentant un utilisateur fictif.
-- /status : retourne un message texte simple indiquant que le serveur fonctionne.
+- /status : retourne un message texte simple indiquant que serveur fonctionne.
 - /info : retourne des informations sur l'API au format JSON.
 
 Exécute un serveur sur le port 8000 en mode bloquant.
@@ -57,7 +57,7 @@ class Serveur(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
             data_info = {"version": "1.0", "description": "A simple API built "
-            "with http.server"}
+                         "with http.server"}
             data_info_json = json.dumps(data_info)
             self.wfile.write(data_info_json.encode("utf-8"))
 
@@ -71,6 +71,7 @@ class Serveur(BaseHTTPRequestHandler):
             self.send_header("Content-type", "text/plain; charset=utf-8")
             self.end_headers()
             self.wfile.write(b"Erreur status introuvable !")
+
 
 httpd = HTTPServer(("", 8000), Serveur)
 httpd.serve_forever()
