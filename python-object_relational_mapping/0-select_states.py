@@ -29,9 +29,10 @@ if __name__ == "__main__":
 
     # Requête SQL
     cursor.execute("SELECT * FROM states ORDER BY id ASC;")
-
+    row = cursor.fetchall()
+    
     # Affichage des résultats ligne par ligne
-    for row in cursor.fetchall():
+    for row in row:
         print(row)
 
     # Fermeture
