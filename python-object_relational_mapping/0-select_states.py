@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+#!/home/timi/holbertonschool-higher_level_programming/.venv/bin/python
+
 """
 Liste tous les États depuis la base hbtn_0e_0_usa.
 Connexion via MySQLdb, sans validation d’arguments.
@@ -10,9 +11,9 @@ import sys
 
 if __name__ == "__main__":
     # Arguments passés en ligne de commande
-    username = sys.arg[1]
-    password = sys.arg[2]
-    database = sys.arg[3]
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
 
     # Connexion à MySQL
     db = MySQLdb.connect(
