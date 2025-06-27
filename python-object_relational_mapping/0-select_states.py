@@ -22,7 +22,7 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database
-        )
+    )
 
     # Création d’un curseur
     cursor = db.cursor()
