@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """
 Liste tous les États depuis la base hbtn_0e_0_usa.
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     # Requête SQL
     cursor.execute("SELECT * FROM states ORDER BY id ASC;")
     row = cursor.fetchall()
-    
+
     # Affichage des résultats ligne par ligne
     for row in row:
         print(row)
