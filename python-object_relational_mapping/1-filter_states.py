@@ -1,4 +1,8 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+"""
+Script affichant tous les états dont le nom commence par 'N'
+depuis une base MySQL.
+"""
 
 import MySQLdb
 import sys
