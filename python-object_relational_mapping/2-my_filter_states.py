@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Script affichant les états dont le nom correspond exactement à un nom donné.
 """
@@ -17,14 +17,14 @@ if __name__ == "__main__":
         port=3306,
         user=username,
         passwd=password,
-        connection=database
+        db=database
         )
 
     cursor = connection.cursor()
 
     cursor.execute(
         "SELECT * FROM states "
-        "WHERE BINARY name = '{}' ORDER BY states.id ASC;".format(state_name)
+        "WHERE BINARY name = '{}' ORDER BY id ASC;".format(state_name)
     )
 
     rows = cursor.fetchall()
