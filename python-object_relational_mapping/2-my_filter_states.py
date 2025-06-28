@@ -12,20 +12,19 @@ if __name__ == "__main__":
     database = sys.argv[3]
     state_name = sys.argv[4]
 
-
-    db = MySQLdb.connect(
+    connection = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=username,
         passwd=password,
-        db=database
+        connection=database
         )
 
-    cursor = db.cursor()
+    cursor = connection.cursor()
 
     cursor.execute(
         "SELECT * FROM states "
-        "WHERE name = '{}' ORDER BY states.id ASC;".format(state_name)
+        "WHERE BINARY name = '{}' ORDER BY states.id ASC;".format(state_name)
     )
 
     rows = cursor.fetchall()
@@ -34,4 +33,4 @@ if __name__ == "__main__":
         print(row)
 
     cursor.close()
-    db.close()
+    connection.close()
