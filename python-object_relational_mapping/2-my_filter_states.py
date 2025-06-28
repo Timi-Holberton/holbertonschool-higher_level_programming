@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script affichant les états dont le nom correspond exactement à un nom donné.
 """
