@@ -12,15 +12,15 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    db = MySQLdb.connect(
+    connection = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=username,
         passwd=password,
-        db=database
+        connection=database
         )
 
-    cursor = db.cursor()
+    cursor = connection.cursor()
 
     cursor.execute(
         "SELECT * FROM states "
@@ -34,4 +34,4 @@ if __name__ == "__main__":
         print(row)
 
     cursor.close()
-    db.close()
+    connection.close()
