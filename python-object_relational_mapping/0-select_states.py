@@ -16,16 +16,16 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Connexion à MySQL
-    db = MySQLdb.connect(
+    connection = MySQLdb.connect(
         host="localhost",
         port=3306,
         user=username,
         passwd=password,
-        db=database
+        connection=database
         )
 
     # Création d’un curseur
-    cursor = db.cursor()
+    cursor = connection.cursor()
 
     # Requête SQL
     cursor.execute("SELECT * FROM states ORDER BY id ASC;")
@@ -37,4 +37,4 @@ if __name__ == "__main__":
 
     # Fermeture
     cursor.close()
-    db.close()
+    connection.close()
