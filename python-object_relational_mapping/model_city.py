@@ -9,6 +9,7 @@ from sqlalchemy.schema import ForeignKey
 from model_state import Base
 from sqlalchemy.orm import relationship
 
+
 class City(Base):
     """
     Classe City mappée à la table 'cities' de la base de données.

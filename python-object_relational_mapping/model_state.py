@@ -14,6 +14,8 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 # Définition de la classe représentant la table 'states'
+
+
 class State(Base):
     __tablename__ = "states"  # Nom réel de la table dans MySQL
 
