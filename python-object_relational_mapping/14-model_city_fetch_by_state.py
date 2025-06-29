@@ -3,7 +3,7 @@
 Script qui affiche toutes les villes de la base MySQL hbtn_0e_14_usa
 associées à leur état (State).
 
-Le script prend en arguments la connexion MySQL (username, password, database),
+Le script prend en arguments la connexion MySQL (username, password, database)
 et affiche chaque ville au format :
 <state name>: (<city id>) <city name>
 
