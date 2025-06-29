@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Script qui affiche toutes les villes d'un État donné
 dans la base de données hbtn_0e_4_usa.
@@ -34,7 +34,8 @@ if __name__ == "__main__":
         "FROM cities "
         "JOIN states ON cities.state_id = states.id "
         "WHERE states.name = %s "
-        "ORDER BY cities.id ASC;", (state_name))
+        "ORDER BY cities.id ASC;", (state_name,))
+    # ajout d'une virgyule à la fin de state_name pour faire un tuple
 
     # Récupération de toutes les lignes de résultats
     rows = cursor.fetchall()
