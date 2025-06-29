@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script qui affiche toutes les villes d'un État donné
 dans la base de données hbtn_0e_4_usa.
