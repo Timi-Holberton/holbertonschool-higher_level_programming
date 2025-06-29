@@ -7,6 +7,7 @@ représentant les villes, avec SQLAlchemy ORM.
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.schema import ForeignKey
 from model_state import Base
+from sqlalchemy.orm import relationship
 
 class City(Base):
     """
@@ -28,3 +29,4 @@ class City(Base):
 
     # Colonne 'state_id' : clé étrangère vers 'states.id', non nulle
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state = relationship("State")
