@@ -15,7 +15,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    # Récupération des arguments de connexion MySQL passés en ligne de commande :
+    # Récupération des arguments de connexion MySQL passés en ligne commande :
     # - username : nom d'utilisateur MySQL
     # - password : mot de passe MySQL
     # - database : nom de la base de données ciblée
