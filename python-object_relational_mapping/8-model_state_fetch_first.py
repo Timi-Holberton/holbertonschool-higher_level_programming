@@ -29,8 +29,6 @@ if __name__ == "__main__":
         f"mysql+mysqldb://{username}:{password}@localhost/"
         f"{database}"
     )
-    # engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
-    # (sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
     # Création de l'engine SQLAlchemy pour gérer la connexion à la base
     engine = create_engine(connection_url, pool_pre_ping=True)
@@ -42,15 +40,17 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Requête pour récupérer tous les objets State triés par id croissant
-    state = session.query(State).order_by(State.id).first()
+    # Requête pour récupérer le premier enregistrement d'État
+    # trié par id croissant
+    enregistrement_etat = session.query(State).order_by(State.id).first()
 
-    # si vide affiche "Nothing"
-    if state == "":
+    # Vérifie si aucun enregistrement n'a été trouvé
+    # et affiche "Nothing" si vide
+    if enregistrement_etat is None:
         print("Nothing")
-    # Affichage le résultat au format "id: name"
+    # Sinon, affiche l'enregistrement au format "id: name"
     else:
-        print(f"{state.id}: {state.name}")
+        print(f"{enregistrement_etat.id}: {enregistrement_etat.name}")
 
     # Fermeture de la session pour libérer les ressources
     session.close()
