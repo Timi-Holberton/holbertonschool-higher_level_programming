@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script qui affiche l'id de l'objet State dont le nom correspond
 exactement au nom passé en argument dans la base MySQL.
@@ -20,7 +20,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    # Récupération des paramètres MySQL et du nom de l'état depuis la ligne de commande
+    # Récupération des paramètres MySQL et du nom de l'état
+    # depuis la ligne de commande
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
