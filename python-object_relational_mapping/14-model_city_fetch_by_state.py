@@ -1,13 +1,8 @@
 #!/usr/bin/python3
 """
 Script qui affiche toutes les villes de la base MySQL hbtn_0e_14_usa
-associées à leur état (State).
-
-Le script prend en arguments la connexion MySQL (username, password, database)
-et affiche chaque ville au format :
-<state name>: (<city id>) <city name>
-
-Les résultats sont triés par identifiant de ville (id croissant).
+associées à leur état (State). Affiche les résultats au format :
+<state name>: (<city id>) <city name>, triés par identifiant croissant.
 """
 
 import sys
@@ -16,31 +11,41 @@ from model_state import State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-if __name__ == "__main__":
-    # Récupération des arguments de connexion MySQL passés en ligne commande
+
+def main():
+    """
+    Connexion à la base de données MySQL, récupération et affichage
+    des villes avec leur état associé.
+    """
+    # Récupère les arguments passés en ligne de commande :
+    # username, password, database
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
 
-    # Construction de l'URL de connexion pour SQLAlchemy avec MySQLdb
+    # Construire l'URL de connexion SQLAlchemy pour MySQLdb
     connection_url = (
-        f"mysql+mysqldb://{username}:{password}@localhost/"
-        f"{database}"
+        f"mysql+mysqldb://{username}:{password}@localhost/{database}"
     )
 
-    # Création de l'engine SQLAlchemy
+    # Création de l'engine SQLAlchemy qui gère la connexion physique à la base
     engine = create_engine(connection_url, pool_pre_ping=True)
 
-    # Création d'une session ORM
+    # Création d'une session ORM liée à l'engine pour interagir avec la BDD
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Requête pour récupérer les villes et leur état associé
+    # Requête pour récupérer toutes les villes et leurs états associés,
+    # triées par identifiant de ville (id) croissant
     cities = session.query(City, State).join(State).order_by(City.id).all()
 
-    # Affichage des résultats
+    # Parcours de la liste de tuples (City, State) et affichage formaté
     for city, state in cities:
         print(f"{state.name}: ({city.id}) {city.name}")
 
-    # Fermeture de la session
+    # Fermeture de la session pour libérer les ressources
     session.close()
+
+
+if __name__ == "__main__":
+    main()
