@@ -38,7 +38,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Requête pour récupérer tous les objets State triés par id (ordre croissant)
+    # Requête pour récupérer tous les objets State triés par id croissant
     states = session.query(State).order_by(State.id).all()
 
     # Affichage des résultats au format "id: name"
