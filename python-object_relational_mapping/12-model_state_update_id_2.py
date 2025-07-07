@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script qui modifie le nom de l'objet State avec l'id 2 dans la base MySQL.
 
