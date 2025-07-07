@@ -20,8 +20,9 @@ if __name__ == "__main__":
 
     # Construction de l'URL de connexion à la base
     connection_url = (
-    f"mysql+mysqldb://{username}:{password}@localhost/{database}"
-)
+    f"mysql+mysqldb://{username}:{password}"
+    f"@localhost/{database}"
+    )
     # Création de l'engine SQLAlchemy
     engine = create_engine(connection_url, pool_pre_ping=True)
 
