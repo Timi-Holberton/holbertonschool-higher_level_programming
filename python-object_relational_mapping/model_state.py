@@ -17,6 +17,9 @@ Base = declarative_base()
 
 
 class State(Base):
+    """
+    classe State
+    """
     __tablename__ = "states"  # Nom réel de la table dans MySQL
 
     # Colonne id : entier, clé primaire, auto-incrémentée, non nulle
