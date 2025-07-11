@@ -10,3 +10,5 @@ if (arg1 === undefined && arg2 === undefined) {
 } else {
   console.log(arg1 + ' is ' + arg2);
 }
+
+//console.log(process.argv[2], 'is', process.argv[3]);
