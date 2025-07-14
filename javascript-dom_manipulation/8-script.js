@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(response => response.json())
     .then(data => {
       document.getElementById('hello').textContent = data.hello;
-  });
+    });
 });
 
 // document.addEventListener('DOMContentLoaded', ...) : attend que tout le HTML soit chargé avant d'exécuter le script
