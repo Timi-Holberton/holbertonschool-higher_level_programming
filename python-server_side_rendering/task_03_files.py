@@ -37,7 +37,7 @@ def lire_fichier_csv(chemin_fichier):
 @app.route('/products')
 def afficher_produits():
     source = request.args.get('source')
-    identifiant_recherche = request.args.get('id', type=int)
+    id_filtrer = request.args.get('id', type=int)
 
     if source == 'json':
         try:
@@ -52,13 +52,13 @@ def afficher_produits():
             return render_template('product_display.html', error="Erreur lors de la lecture du fichier CSV.")
 
     else:
-        return render_template('product_display.html', error="Source invalide. Choisissez 'json' ou 'csv'.")
+        return render_template('product_display.html', error="Wrong source")
 
-    if identifiant_recherche is not None:
+    if id_filtrer is not None:
         produits_filtres = []
 
         for produit in produits:
-            if produit['id'] == identifiant_recherche:
+            if produit['id'] == id_filtrer:
                 produits_filtres.append(produit)
 
         if not produits_filtres:
