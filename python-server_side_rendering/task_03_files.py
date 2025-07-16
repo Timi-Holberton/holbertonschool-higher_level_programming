@@ -62,7 +62,7 @@ def afficher_produits():
                 produits_filtres.append(produit)
 
         if not produits_filtres:
-            return render_template('product_display.html', error="Produit non trouvé.")
+            return render_template('product_display.html', error="Product not found")
         return render_template('product_display.html', products=produits_filtres)
 
     return render_template('product_display.html', products=produits)
