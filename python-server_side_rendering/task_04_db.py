@@ -85,8 +85,8 @@ def afficher_produits():
     elif source == 'sql':
         try:
             produits = lire_base_de_donnees_sqlite('products.db')
-        except Exception as erreur:
-            return render_template('product_display.html', error=str(erreur))
+        except Exception as erreurs:
+            return render_template('product_display.html', error=str(erreurs))
 
     else:
         # Si le paramètre 'source' est invalide
@@ -100,7 +100,7 @@ def afficher_produits():
 
         if not produits_filtres:
             # Si aucun produit ne correspond, affiche un message d'erreur
-            return render_template('product_display.html', error="Produit non trouvé.")
+            return render_template('product_display.html', error="Product not found")
 
         # Sinon, affiche uniquement le produit filtré
         return render_template('product_display.html', products=produits_filtres)
